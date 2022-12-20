@@ -2,5 +2,5 @@
 
 for i in {1..10}
 do
-	echo "Hello GIT"
+	echo "Hello GIT $i"
 done
