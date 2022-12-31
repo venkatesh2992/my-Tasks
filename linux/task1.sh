@@ -5,21 +5,38 @@ function check_usuage ()
 	free -h
 	echo ""
 }
-function check_cpu ()
+#!/on check_memory ()
 {
-	echo "The CPU usuage is"
-	uptime
-	echo ""
+        echo ""
+                echo "Memory usage"
+                free -h
+        echo ""
 }
-function check_diskusuage ()
+
+function check_cpu()
 {
-	echo "The Diskusuage is"
-	df -kh
-	echo ""
+        echo ""
+                echo "CPU load"
+        echo ""
+                uptime
+        echo ""
 }
+function check_disk()
+{
+        echo ""
+                echo "Disk connection"
+        echo ""
+                df -kh
+        echo ""
+}
+
 function check_hostname ()
 {
 	echo "The server HOSTNAME is"
 	HOSTNAME
 }
+check_memory
+check_cpu
+check_disk
+check_hostname
 
