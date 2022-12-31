@@ -13,7 +13,7 @@ function2 ()
 function3 ()
 {
 	echo "The function3 calls"
-	echo "Enter your name"
+	echo "Enter your name -"
 	read name
 	echo "Your name is $name"
 }
