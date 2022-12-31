@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Enter filename"
+
 read filename
 
 filename=$(wc -c $filename)
