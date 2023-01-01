@@ -1,5 +1,6 @@
 #!/bin/bash
 
+<<<<<<< HEAD
 function1 ()
 {
 	echo "The function1calls"
@@ -18,3 +19,12 @@ function3 ()
 	echo "Your name is $name"
 }
  
+=======
+. fun.sh
+
+function1
+function2
+function3
+function2
+
+>>>>>>> de0a52d4c809ebcb5de0c81dd4bc014edb35baf0
