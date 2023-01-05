@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Hello Wish you a Happy Newyear"
+echo "Hello Welcome to Devops"
