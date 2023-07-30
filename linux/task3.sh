@@ -1,26 +1,30 @@
 #!/bin/bash
 
-echo "Enter find filename"
+find_file() {
+    local path="$1"
+    local filename="$2"
 
-read filename
+    if [ -z "$path" ]; then
+        path="/"
+    fi
 
-file=`ls | grep $filename -c`
+    if [ ! -d "$path" ]; then
+        echo "Error: Directory '$path' not found!"
+        exit 1
+    fi
 
-if [ -f  $file ]
-then
-        echo "file is found"
-        echo "Enter the word to be searched"
-        read word
+    found_files=$(find "$path" -type f -name "$filename")
 
-        file1=`cat $filename | grep -w $word -c`
-        if [ $file1 -gt 0 ]
-        then
-                echo "The word is found $file1 times in file"
+    if [ -z "$found_files" ]; then
+        echo "File '$filename' not found in directory '$path'."
+    else
+        echo "Found file '$filename' in directory '$path':"
+        echo "$found_files"
+    fi
+}
 
-        else
-                echo "The word is not found in the file"
-        fi
-else
-        echo "The filename not found '/'"
-fi
+read -p "Enter the directory path (press Enter for default '/'): " input_path
+read -p "Enter the filename: " input_filename
+
+find_file "$input_path" "$input_filename"
 
