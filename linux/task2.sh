@@ -4,22 +4,24 @@ echo "Enter filename"
 
 read filename
 
-filename=$(wc -c $filename)
+char_count=$(wc -c < $filename)
 
-	echo "No of characters"
+	echo "No of characters: $char_count"
 
-filename=$(wc -l $filename)
+line_count=$(wc -l < $filename)
 
-	echo "No of lines"
-filename  =$(wc -w $filename)
+	echo "No of lines : $line_count"
+word_count=$(wc -w < $filename)
 
-	echo "No of words"
+	echo "No of words: $word_count"
 
-rev$filename
+rev $filename
 
 echo "Enter Word"
 
 read word
 
-grep -c "$word""$filename"
+word_occurrences=$(grep -o -i -c "$word" "$filename")
+
+echo "Occurrences of \"$word\": $word_occurrences"
 
